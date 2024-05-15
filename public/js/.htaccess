@@ -1,0 +1,11 @@
+
+# <deactivate www.nrchrod.org>
+# Reason for deactivation: deactivate%20flag
+# Please contact us to remedy this situation as soon as possible
+RedirectMatch temp ^/(?!cgi-sys/suspendedpage.cgi).* /cgi-sys/suspendedpage.cgi
+# </deactivate>
+DirectoryIndex index.php index.html index.htm
+AddHandler fcgid-script .fcgi
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ workshopvenues.fcgi/$1 [QSA,L]
